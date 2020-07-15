@@ -17,6 +17,7 @@
 //*  20xx/xx/xx  ＸＸ ＸＸ         ＸＸＸＸ
 //**********************************************************************************
 
+using System;
 using System.Net.Http;
 
 using Microsoft.AspNetCore;
@@ -49,8 +50,15 @@ namespace MVC_Sample
         {
             // WebHost経由で、IWebHost, IWebHostBuilderにアクセスする。
 
+            string url = Environment.GetEnvironmentVariable("UseUrl");
+            if (string.IsNullOrEmpty(url))
+            {
+                url = "http://0.0.0.0:5000/";
+            }
+
             return WebHost.CreateDefaultBuilder(args) //  IWebHostBuilderを取得する。
                 .UseStartup<Startup>() // IWebHostBuilder.UseStartup<TStartup> メソッドにStartupクラスを指定。
+                .UseUrls(url) // 使用するプロトコルとポートを決定する。
                 .Build(); // IWebHostBuilder.Build メソッドでIWebHostクラスインスタンスを返す。
         }
     }
