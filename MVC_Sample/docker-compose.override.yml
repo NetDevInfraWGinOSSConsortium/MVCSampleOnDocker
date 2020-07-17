@@ -5,6 +5,8 @@ services:
     environment:
       - ASPNETCORE_URLS=http://+:5000
       - UseUrl=http://0.0.0.0:5000/
+      - RedisConfig=redis
+      - RedisInstanceName=redis
       - ConnectionString_SQL=Data Source=sqlserver;Initial Catalog=Northwind;User ID=sa;Password=seigi@123;
       - ConnectionString_MCN=Server=mysql;Database=test;User Id=root;Password=seigi@123;
       - ConnectionString_NPS=HOST=postgres;DATABASE=postgres;USER ID=postgres;PASSWORD=seigi@123;

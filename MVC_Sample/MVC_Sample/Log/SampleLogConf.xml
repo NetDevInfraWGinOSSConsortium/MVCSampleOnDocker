@@ -36,7 +36,7 @@
 	-->
 	
 	<!-- ローリング・ログファイル出力用アペンダ -->
-	<appender name="ACCESS" type="log4net.Appender.RollingFileAppender">
+	<appender name="ACCESS1" type="log4net.Appender.RollingFileAppender">
 		<param name="File" value="./Log/ACCESS" />
 		<!-- ローリングの設定 -->
 		<param name="StaticLogFileName" value="false" />
@@ -55,9 +55,21 @@
 			<levelMax value="FATAL" />
 		</filter>
 	</appender>
+  <!-- コンソール出力用アペンダ -->
+  <appender name="ACCESS2" type="log4net.Appender.ConsoleAppender">
+    <!-- メッセージのフォーマット -->
+    <layout type="log4net.Layout.PatternLayout">
+      <param name="ConversionPattern" value="[%date{yyyy/MM/dd HH:mm:ss,fff}],[%-5level],[%thread],%message%newline" />
+    </layout>
+    <!-- フィルタ（範囲）の設定 -->
+    <filter type="log4net.Filter.LevelRangeFilter">
+      <levelMin value="DEBUG" />
+      <levelMax value="FATAL" />
+    </filter>
+  </appender>
 		
 	<!-- ローリング・ログファイル出力用アペンダ -->
-	<appender name="SQLTRACE" type="log4net.Appender.RollingFileAppender">
+	<appender name="SQLTRACE1" type="log4net.Appender.RollingFileAppender">
 		<param name="File" value="./Log/SQLTRACE" />
 		<!-- ローリングの設定 -->
 		<param name="StaticLogFileName" value="false" />
@@ -76,9 +88,21 @@
 			<levelMax value="FATAL" />
 		</filter>
 	</appender>
+  <!-- コンソール出力用アペンダ -->
+  <appender name="SQLTRACE2" type="log4net.Appender.ConsoleAppender">
+    <!-- メッセージのフォーマット -->
+    <layout type="log4net.Layout.PatternLayout">
+      <param name="ConversionPattern" value="[%date{yyyy/MM/dd HH:mm:ss,fff}],[%-5level],[%thread],%message%newline" />
+    </layout>
+    <!-- フィルタ（範囲）の設定 -->
+    <filter type="log4net.Filter.LevelRangeFilter">
+      <levelMin value="DEBUG" />
+      <levelMax value="FATAL" />
+    </filter>
+  </appender>
 	
 	<!-- ローリング・ログファイル出力用アペンダ -->
-	<appender name="OPERATION" type="log4net.Appender.RollingFileAppender">
+	<appender name="OPERATION1" type="log4net.Appender.RollingFileAppender">
 		<param name="File" value="./Log/OPERATION" />
 		<!-- ローリングの設定 -->
 		<param name="StaticLogFileName" value="false" />
@@ -97,7 +121,19 @@
 			<levelMax value="FATAL" />
 		</filter>
 	</appender>
-	
+  <!-- コンソール出力用アペンダ -->
+  <appender name="OPERATION2" type="log4net.Appender.ConsoleAppender">
+    <!-- メッセージのフォーマット -->
+    <layout type="log4net.Layout.PatternLayout">
+      <param name="ConversionPattern" value="[%date{yyyy/MM/dd HH:mm:ss,fff}],[%-5level],[%thread],%message%newline" />
+    </layout>
+    <!-- フィルタ（範囲）の設定 -->
+    <filter type="log4net.Filter.LevelRangeFilter">
+      <levelMin value="DEBUG" />
+      <levelMax value="FATAL" />
+    </filter>
+  </appender>
+  
 	<!--
 		ロガーを作成する。
 		ロガーにはロガー名、アペンダ、出力レベルを設定する。
@@ -125,15 +161,18 @@
 		プログラムから個別のロガー名を指定したログは、個別のロガーで処理される。
 	-->
 	<logger name="ACCESS">
-		<level value="All" /> 
-		<appender-ref ref="ACCESS" /> 
-	</logger>
+		<level value="All" />
+    <appender-ref ref="ACCESS1" />
+    <appender-ref ref="ACCESS2" />
+  </logger>
 	<logger name="SQLTRACE">
-		<level value="All" /> 
-		<appender-ref ref="SQLTRACE" /> 
-	</logger>
+		<level value="All" />
+    <appender-ref ref="SQLTRACE1" />
+    <appender-ref ref="SQLTRACE2" />
+  </logger>
 	<logger name="OPERATION">
-		<level value="All" /> 
-		<appender-ref ref="OPERATION" /> 
-	</logger>	
+		<level value="All" />
+    <appender-ref ref="OPERATION1" />
+    <appender-ref ref="OPERATION2" />
+  </logger>	
 </log4net>
