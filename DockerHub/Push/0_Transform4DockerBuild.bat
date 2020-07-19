@@ -1,0 +1,5 @@
+xcopy /Y /E "..\..\MVC_Sample\MVC_Sample" "MVC_Sample\"
+xcopy /Y /E "..\..\MVC_Sample\files" "MVC_Sample\files\"
+xcopy /Y /E "..\..\MVC_Sample\OpenTouryoAssemblies" "MVC_Sample\OpenTouryoAssemblies\"
+copy /Y ".\MVC_Sample.csproj" "MVC_Sample\MVC_Sample.csproj"
+del /Q "MVC_Sample\Dockerfile"
