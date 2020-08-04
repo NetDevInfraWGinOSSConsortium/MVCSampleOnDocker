@@ -10,8 +10,13 @@ services:
       - ConnectionString_SQL=Data Source=sqlserver;Initial Catalog=Northwind;User ID=sa;Password=seigi@123;
       - ConnectionString_MCN=Server=mysql;Database=test;User Id=root;Password=seigi@123;
       - ConnectionString_NPS=HOST=postgres;DATABASE=postgres;USER ID=postgres;PASSWORD=seigi@123;
+      - JwkSetUri=http://multipurposeauthsitecore:5000/jwkcerts/
+      - SpRp_AuthRequestUri=http://localhost:44300/authorize
+      - SpRp_TokenRequestUri=http://multipurposeauthsitecore:5000/token
+      - SpRp_UserInfoUri=http://multipurposeauthsitecore:5000/userinfo
+      - SpRp_RedirectUri=http://localhost:58496/Home/OAuth2AuthorizationCodeGrantClient
     ports:
-      - "5000:5000"
+      - "58496:5000"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

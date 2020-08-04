@@ -19,6 +19,7 @@
 
 using System;
 using System.IO;
+using System.Reflection;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -141,6 +142,9 @@ namespace MVC_Sample
         {
             // 構成情報から、AppConfiguration SectionをAppConfiguration Classへバインドするようなケース。
             //services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"));
+
+            // カレント・ディレクトリを変更する。
+            Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
 
             // HttpContextのマイグレーション用
             services._AddHttpContextAccessor();
