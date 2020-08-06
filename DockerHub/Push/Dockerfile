@@ -13,5 +13,6 @@ RUN dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.0 AS runtime
 WORKDIR /app
+COPY ["MVC_Sample/aspnetapp.pfx", "./"] # ’Ç‹L
 COPY --from=build /app/MVC_Sample/out ./
 ENTRYPOINT ["dotnet", "MVC_Sample.dll"]

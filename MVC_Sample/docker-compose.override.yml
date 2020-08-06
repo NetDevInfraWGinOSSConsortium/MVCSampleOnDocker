@@ -14,9 +14,9 @@ services:
       - JwkSetUri=https://host.docker.internal:44300/MultiPurposeAuthSite/jwkcerts/
       - SpRp_TokenRequestUri=https://host.docker.internal:44300/MultiPurposeAuthSite/token
       - SpRp_UserInfoUri=https://host.docker.internal:44300/MultiPurposeAuthSite/userinfo
-      # - JwkSetUri=https://multipurposeauthsitecore:5001/jwkcerts/
-      # - SpRp_TokenRequestUri=https://multipurposeauthsitecore:5001/token
-      # - SpRp_UserInfoUri=https://multipurposeauthsitecore:5001/userinfo
+      # - JwkSetUri=http://multipurposeauthsitecore:5000/jwkcerts/
+      # - SpRp_TokenRequestUri=http://multipurposeauthsitecore:5000/token
+      # - SpRp_UserInfoUri=http://multipurposeauthsitecore:5000/userinfo
     ports:
       - "44334:5001"
     volumes:
