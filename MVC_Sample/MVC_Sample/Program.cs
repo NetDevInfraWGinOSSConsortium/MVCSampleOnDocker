@@ -36,7 +36,20 @@ namespace MVC_Sample
         public static void Main(string[] args)
         {
             // OpenID用
-            OAuth2AndOIDCClient.HttpClient = new HttpClient();
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+            {
+                OAuth2AndOIDCClient.HttpClient = new HttpClient();
+            }
+            else
+            {
+                //OAuth2AndOIDCClient.HttpClient = new HttpClient();
+
+                // 暫定
+                HttpClientHandler handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback 
+                    = (message, cert, chain, sslPlicyErrors) => true;
+                OAuth2AndOIDCClient.HttpClient = new HttpClient(handler);
+            }
 
             // BuildWebHostが返すIWebHostをRunする。
             // 呼び出し元スレッドは終了までブロックされる。

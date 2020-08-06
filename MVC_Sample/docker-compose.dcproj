@@ -5,7 +5,7 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>e78ff5a1-6d28-4cfe-9a3c-24f32c211ca8</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
+    <DockerServiceUrl>https://localhost:44334/</DockerServiceUrl>
     <DockerServiceName>mvc_sample</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
