@@ -42,19 +42,27 @@ IIS Express と Docker Compose でのみ起動する（Dockerでは環境変数�
 
 `.\MVCSampleOnDocker\DockerHub\Push`フォルダに移動後、  
 
-- `0_Transform_MVC_Sample4DockerBuild.bat` をダブルクリックし、  
+- `00_Transform4DockerBuild.bat` をダブルクリックし、  
 Docker Hubに登録するコンテナ・イメージの作成用のビルドシステムに変形する。
 
-- `1_DockerBuild_MVC_Sample.bat` をダブルクリックし、  
+- `01_DeleteDir.bat` と `02_DeleteFile.bat` をダブルクリックし、  
+ビルド対象のMVC_Sampleフォルダ内のコンテンツをクリーンナップする。
+
+- `10_DockerBuild.bat` をダブルクリックし、  
 Docker Buildを行い、コンテナ・イメージを生成する。
 
-- `2_DockerCompose_MVC_Sample.bat` をダブルクリックし、  
-生成したコンテナ・イメージをテスト実行する。
+- `21_DockerComposeUp.bat` をダブルクリックし、  
+生成したコンテナ・イメージを用いてコンテナを起動し、テスト実行する。
 
-- `3_Push_MVC_Sample2DockerHub.bat` をダブルクリックし、  
+- `22_DockerComposeDown.bat` をダブルクリックし、  
+必要に応じて、コンテナを停止し、テストを終了する。
+
+- `30_Push2DockerHub.bat` をダブルクリックし、  
 コンテナ・イメージをDocker Hubに登録する。
 
 ### DockerからPull
 `.\MVCSampleOnDocker\DockerHub\Pull`フォルダに移動後、  
-`0_Pull_MVC_SampleFromDockerHub.bat`をダブルクリックし、  
-Docker Hubからコンテナ・イメージを取得し、テスト実行する。
+- `0_Pull.bat`をダブルクリックし、
+  - Docker Hubからコンテナ・イメージを取得し、
+  - 取得したコンテナ・イメージを用いてコンテナを起動し、テスト実行する。
+- `1_Stop.bat`をダブルクリックし、コンテナを停止し、テストを終了する。

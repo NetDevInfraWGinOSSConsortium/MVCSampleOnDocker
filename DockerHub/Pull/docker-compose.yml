@@ -17,8 +17,6 @@ services:
       - SpRp_UserInfoUri=http://multipurposeauthsitecore:5000/userinfo
     ports:
       - "44334:5001"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
     networks:
       - common_link
 
