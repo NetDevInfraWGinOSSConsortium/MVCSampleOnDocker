@@ -9,13 +9,13 @@
 
   <ItemGroup>
     <Compile Remove="files\**" />
-    <Compile Remove="OpenTouryoAssemblies\**" />
+    <Compile Remove="Assemblies\**" />
     <Content Remove="files\**" />
-    <Content Remove="OpenTouryoAssemblies\**" />
+    <Content Remove="Assemblies\**" />
     <EmbeddedResource Remove="files\**" />
-    <EmbeddedResource Remove="OpenTouryoAssemblies\**" />
+    <EmbeddedResource Remove="Assemblies\**" />
     <None Remove="files\**" />
-    <None Remove="OpenTouryoAssemblies\**" />
+    <None Remove="Assemblies\**" />
   </ItemGroup>
 
   <ItemGroup>
