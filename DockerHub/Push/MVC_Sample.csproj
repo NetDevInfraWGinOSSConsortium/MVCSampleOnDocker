@@ -106,4 +106,8 @@
       <HintPath>Assemblies\netcoreapp3.0\OpenTouryo.Public.Security.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="X509\" />
+  </ItemGroup>
 </Project>

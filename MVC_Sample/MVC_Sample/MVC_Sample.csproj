@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Log\" />
+    <Folder Include="Sql\" />
+    <Folder Include="Xml\" />
+    <Folder Include="X509\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="..\files\resource\Log\SampleLogConf.xml" Link="Log\SampleLogConf.xml" />
     <EmbeddedResource Include="..\files\resource\Sql\DaoCategories_D1_Insert.xml" Link="Sql\DaoCategories_D1_Insert.xml" />
     <EmbeddedResource Include="..\files\resource\Sql\DaoCategories_D2_Select.xml" Link="Sql\DaoCategories_D2_Select.xml" />
@@ -60,9 +67,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Log\" />
-    <Folder Include="Sql\" />
-    <Folder Include="Xml\" />
+    <None Include="..\files\resource\X509\SHA256RSA_Server.cer" Link="X509\SHA256RSA_Server.cer">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
