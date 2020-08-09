@@ -108,6 +108,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="X509\" />
+    <None Update="X509\SHA256RSA_Server.cer">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
