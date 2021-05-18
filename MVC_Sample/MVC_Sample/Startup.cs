@@ -84,9 +84,13 @@ namespace MVC_Sample
             // HttpContextのマイグレーション用
             app._UseHttpContextAccessor();
 
-            app.UseStaticFiles();
-            app.UseHsts();
             app.UseHttpsRedirection();
+
+            // /wwwroot（既定の）の
+            // 静的ファイルをパイプラインに追加
+            app.UseStaticFiles();
+            // HSTS ヘッダーをクライアントに送信
+            app.UseHsts();
 
             app.UseDeveloperExceptionPage();
             //app.UseExceptionHandler("/Home/Error");

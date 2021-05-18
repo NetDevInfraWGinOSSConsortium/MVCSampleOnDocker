@@ -26,4 +26,4 @@ services:
 
 networks:
   common_link:
-    external: true
+    external:true

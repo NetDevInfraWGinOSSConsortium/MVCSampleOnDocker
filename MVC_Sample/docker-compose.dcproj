@@ -3,9 +3,9 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>e78ff5a1-6d28-4cfe-9a3c-24f32c211ca8</ProjectGuid>
+    <ProjectGuid>e96f0fc1-ea43-41b9-a63b-7eabea5fd46d</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>https://localhost:44334/</DockerServiceUrl>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>mvc_sample</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
@@ -13,5 +13,6 @@
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>
     <None Include="docker-compose.yml" />
+    <None Include=".dockerignore" />
   </ItemGroup>
 </Project>
